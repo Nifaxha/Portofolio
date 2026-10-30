@@ -1,0 +1,65 @@
+@import 'tailwindcss';
+
+@theme {
+    --font-sans: 'Figtree', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-display: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif;
+
+    --color-canvas: #e8edf1;
+    --color-paper: #f7f9fb;
+    --color-ink: #101a2e;
+    --color-muted: #56627a;
+    --color-line: #bfc9d6;
+    --color-accent: #2b3fe0;
+
+    --animate-naik: naik 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    --animate-muncul: muncul 0.22s ease-out;
+
+    @keyframes naik {
+        from {
+            transform: translateY(105%);
+        }
+        to {
+            transform: none;
+        }
+    }
+
+    @keyframes muncul {
+        from {
+            opacity: 0;
+            transform: translateY(12px);
+        }
+        to {
+            opacity: 1;
+            transform: none;
+        }
+    }
+}
+
+/* Lebar konten dan jarak samping yang sama di seluruh halaman */
+@utility wrap {
+    margin-inline: auto;
+    max-width: 76rem;
+    padding-inline: clamp(1.25rem, 5vw, 4rem);
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 5rem;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+    }
+
+    body {
+        @apply bg-canvas font-sans text-[1.0625rem] leading-[1.6] text-ink antialiased;
+    }
+
+    :focus-visible {
+        outline: 3px solid var(--color-ink);
+        outline-offset: 3px;
+    }
+}
