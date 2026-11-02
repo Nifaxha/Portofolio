@@ -1,12 +1,17 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import App from "./MainApp";
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import MainApp from './MainApp';
+import '../css/app.css';
 
-// Data portofolio dikirim dari Laravel (config/portfolio.php) lewat tag <script> di Blade.
-const data = JSON.parse(document.getElementById("portfolio-data").textContent);
+const appEl = document.getElementById('app');
 
-createRoot(document.getElementById("root")).render(
-    <StrictMode>
-        <App {...data} />
-    </StrictMode>,
-);
+if (appEl) {
+    const portfolio = JSON.parse(appEl.dataset.portfolio || '{}');
+    const page = appEl.dataset.page || 'home';
+
+    createRoot(appEl).render(
+        <React.StrictMode>
+            <MainApp portfolio={portfolio} page={page} />
+        </React.StrictMode>
+    );
+}

@@ -1,56 +1,55 @@
-export default function Contact({ profile }) {
+import React from 'react';
+
+export default function Contact() {
+    // Array data kontak beserta jalur gambar default & hover
+    const contactLinks = [
+        {
+            name: 'Email',
+            href: 'mailto:emailmu@example.com',
+            imgDefault: '/assets/Btn-Normal-Email.png',
+            imgHover: '/assets/Btn-Hover-Email.png',
+        },
+        {
+            name: 'GitHub',
+            href: 'https://github.com/Nifaxha',
+            imgDefault: '/assets/Btn-Normal-Github.png',
+            imgHover: '/assets/Btn-Hover-Github.png',
+        },
+    ];
+
     return (
-        <section
-            id="kontak"
-            aria-labelledby="h-kontak"
-            className="border-t-2 border-ink py-[clamp(3.5rem,9vw,7rem)]"
-        >
-            <h2
-                id="h-kontak"
-                className="font-display text-[clamp(2rem,5vw,3.2rem)] font-extrabold leading-none tracking-[-0.03em]"
-            >
-                Mari ngobrol
-            </h2>
-            <p className="mt-4 max-w-[30rem] text-muted">
-                Punya proyek atau lowongan? Kirim pesan lewat salah satu kanal
-                ini.
+        <section id="kontak" className="max-w-[1440px] mx-auto px-6 sm:px-10 py-16 border-t border-neutral-800 scroll-mt-20">
+            <h2 className="text-3xl md:text-4xl font-black text-orange-400 mb-4 tracking-tight">Kontak</h2>
+            <p className="text-black-400 text-sm md:text-base mb-8">
+                Punya proyek atau lowongan? Kirim pesan melalui salah satu kanal ini:
             </p>
 
-            <ul className="mt-8">
-                {profile.kontak.map((k) => {
-                    const eksternal = /^https?:/.test(k.href);
-                    return (
-                        <li
-                            key={k.label}
-                            className="grid items-baseline gap-x-4 border-b border-line py-3 sm:grid-cols-[7rem_1fr]"
-                        >
-                            <span className="text-muted">{k.label}</span>
-                            <a
-                                href={k.href}
-                                {...(eksternal
-                                    ? {
-                                          target: "_blank",
-                                          rel: "noopener noreferrer",
-                                      }
-                                    : {})}
-                                className="font-display text-[clamp(1.15rem,3vw,1.6rem)] font-semibold tracking-[-0.02em] underline decoration-2 underline-offset-4 [overflow-wrap:anywhere] hover:text-accent"
-                            >
-                                {k.teks}
-                            </a>
-                        </li>
-                    );
-                })}
-            </ul>
+            {/* Container Tombol Kontak Gambar */}
+            <div className="flex flex-wrap gap-6 items-center">
+                {contactLinks.map((item) => (
+                    <a
+                        key={item.name}
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group relative inline-block transition-transform duration-300 hover:-translate-y-1 active:translate-y-0"
+                    >
+                        {/* Gambar 1: Kondisi Normal (Before Hover) */}
+                        <img
+                            src={item.imgDefault}
+                            alt={item.name}
+                            className="h-16 w-auto object-contain transition-opacity duration-300 ease-in-out group-hover:opacity-0"
+                        />
 
-            {profile.cv && (
-                <a
-                    href={profile.cv}
-                    download
-                    className="mt-8 inline-block rounded-full bg-ink px-5 py-3 font-semibold text-canvas hover:bg-accent hover:text-white"
-                >
-                    Unduh CV
-                </a>
-            )}
+                        {/* Gambar 2: Kondisi Hover (Ditumpuk di atasnya dengan absolute) */}
+                        <img
+                            src={item.imgHover}
+                            alt={`${item.name} Hover`}
+                            className="absolute inset-0 h-16 w-auto object-contain opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
+                        />
+                    </a>
+                ))}
+            </div>
         </section>
     );
 }

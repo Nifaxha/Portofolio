@@ -1,38 +1,23 @@
-export default function Hero({ profile }) {
-    const baris = "block overflow-hidden pb-[.06em]";
-    const isi = "inline-block animate-naik motion-reduce:animate-none";
+import React from 'react';
 
+export default function Hero({ profile }) {
     return (
-        <section
-            aria-labelledby="judul-utama"
-            className="pb-[clamp(3rem,7vw,5rem)] pt-[clamp(3rem,10vw,8rem)]"
-        >
-            <h1
-                id="judul-utama"
-                className="font-display text-[clamp(3.4rem,13vw,8rem)] font-extrabold leading-[1.02] tracking-[-0.03em]"
-            >
-                <span className={baris}>
-                    <span className={isi}>{profile.nama}</span>
-                </span>
-                <span className={baris}>
-                    <span
-                        className={`${isi} text-[.52em] font-normal tracking-[-0.02em] text-accent`}
-                        style={{ animationDelay: ".12s" }}
-                    >
-                        {profile.peran}
-                    </span>
-                </span>
+        <section className="max-w-[1440px] mx-auto px-6 sm:px-10 py-20 md:py-28">
+            <h1 className="text-5xl md:text-7xl font-black tracking-tight text-black mb-4">
+                {profile?.nama || 'Dwi Haris Riza Darmawan'}
             </h1>
-            <p className="mt-8 max-w-[34rem] text-[clamp(1.15rem,2vw,1.4rem)] leading-normal">
-                {profile.intro}
+            <h2 className="text-3xl md:text-5xl font-bold text-orange-400/80 mb-6">
+                {profile?.peran || 'Game Developer & Web Developer'}
+            </h2>
+            <p className="text-black text-base md:text-lg max-w-2xl leading-relaxed mb-6">
+                {profile?.intro}
             </p>
-            <p className="mt-6 flex items-center gap-2.5 text-[.98rem] text-muted">
-                <span
-                    className="size-2.5 flex-none rounded-full bg-[#1fa463]"
-                    aria-hidden="true"
-                />
-                {profile.status}
-            </p>
+            {profile?.status && (
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-400/75 border border-amber-400 text-black text-xs font-medium">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span>{profile.status}</span>
+                </div>
+            )}
         </section>
     );
 }

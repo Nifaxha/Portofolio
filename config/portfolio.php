@@ -16,7 +16,7 @@ return [
         'nama' => 'Dwi Haris Riza Darmawan',
         'peran' => 'Game Developer & Web Developer',
         'lokasi' => 'Surabaya, Indonesia',
-        'status' => 'Terbuka untuk proyek magang',
+        'status' => 'Terbuka untuk magang',
         'intro' => 'Aku membuat aplikasi web yang cepat dan mudah dipakai. Di bawah ini beberapa proyek yang pernah aku kerjakan.',
         'tentang' => [
             'Saya biasanya berperan sebagai Front End Developer, Game Programmer, dan Project Manager. Saya memiliki pengalaman dalam mengembangkan aplikasi web dan game menggunakan berbagai teknologi.',
@@ -30,7 +30,6 @@ return [
         'kontak' => [
             ['label' => 'Email', 'teks' => 'harizriza30@gmail.com', 'href' => 'mailto:harizriza30@gmail.com'],
             ['label' => 'GitHub', 'teks' => 'github.com/Nifaxha', 'href' => 'https://github.com/Nifaxha'],
-            ['label' => 'LinkedIn', 'teks' => 'linkedin.com/in/Nifaxha', 'href' => 'https://linkedin.com/in/Nifaxha'],
         ],
         // Opsional: taruh file CV di folder public/ lalu isi namanya, misalnya 'cv.pdf'. Kosongkan jika tidak ada.
         'cv' => '',
