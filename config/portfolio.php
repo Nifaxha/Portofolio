@@ -44,15 +44,15 @@ return [
     */
     'projects' => [
         [
-            'judul' => 'Website TMT',
+            'judul' => 'Ngotok3D',
             'tahun' => 2026,
-            'kategori' => 'Web',
-            'peran' => 'Front-end developer',
-            'ringkas' => 'Pembuatan Website TMT untuk membantu guru dalam mengelola data siswa.',
-            'deskripsi' => 'Website ini nantinya berfungsi untuk membantu guru dalam mengelola data siswa, seperti absensi, nilai, dan jadwal pelajaran. Website ini juga memiliki fitur untuk menampilkan informasi penting kepada siswa dan orang tua.',
-            'teknologi' => ['Laravel', 'React', 'Tailwind CSS', 'Blade.php', 'Docker'],
+            'kategori' => 'Game Developer',
+            'peran' => 'Game Programmer',
+            'ringkas' => 'Pembuatan Game Single Player berbasis Unity untuk PC.',
+            'deskripsi' => 'Game ini merupakan game fun multiplayer berbasis Unity untuk PC. Pada game ini kita cukup menggerakkan 1 kapal dengan 1 pemain saja menggunakan tombol WASD. Game ini memiliki beberapa level yang harus diselesaikan oleh pemain.',
+            'teknologi' => ['Unity', 'C#'],
             'gambar' => '',
-            'demo' => '',
+            'itch.io' => '',
             'repo' => 'https://github.com/Nifaxha/kasir-warung',
         ],
         [
@@ -64,7 +64,7 @@ return [
             'deskripsi' => 'Dashboard interaktif yang merangkum penjualan per produk dan per cabang. Sebutkan angka atau dampak nyata kalau ada, misalnya waktu pembuatan laporan turun dari 2 jam menjadi 5 menit.',
             'teknologi' => ['Laravel', 'N8N', 'Blade.php', 'Docker'],
             'gambar' => '',
-            'demo' => 'https://Nifaxha.github.io/dashboard',
+            'itch.io' => 'https://Nifaxha.github.io/dashboard',
             'repo' => 'https://github.com/Nifaxha/dashboard-penjualan',
         ],
         [
@@ -75,8 +75,8 @@ return [
             'ringkas' => 'Game fun multiplayer berbasis Unity untuk PC.',
             'deskripsi' => 'Game ini merupakan game fun multiplayer berbasis Unity untuk PC. Pada game ini kita menggerakkan 1 kapal dengan 2 peran pemain, dimana 1 pemain menggerakkan bagian kiri kapal dan 1 pemain menggerakkan bagian kanan kapal. Game ini memiliki beberapa level yang harus diselesaikan oleh pemain.',
             'teknologi' => ['Unity', 'C#'],
-            'gambar' => '',
-            'demo' => '',
+            'gambar' => '/assets/projects/boat-together.png',
+            'itch.io' => '',
             'repo' => 'https://github.com/Nifaxha/catatan-belajar',
         ],
         [
@@ -87,8 +87,8 @@ return [
             'ringkas' => 'Game multiplayer Co-op berbasis Unity untuk PC.',
             'deskripsi' => 'Game ini merupakan game multiplayer Co-op berbasis Unity untuk PC. Game ini kita hanya memiliki satu tubuh yang dikendalikan oleh dua pemain. Game ini kita memainkan karakter orang buta. Terdapat 2 role, sebagai mata dan sebagai tubuh',
             'teknologi' => ['Unity', 'C#'],
-            'gambar' => '',
-            'demo' => 'https://Nifaxha.github.io/komunitas',
+            'gambar' => '/assets/projects/trust-fall.png',
+            'itch.io' => 'https://Nifaxha.github.io/komunitas',
             'repo' => '',
         ],
         [
@@ -100,7 +100,7 @@ return [
             'deskripsi' => 'Game ini merupakan game multiplayer Co-op berbasis Unity untuk PC. Game ini kita hanya memiliki satu tubuh yang dikendalikan oleh dua pemain. Game ini kita memainkan karakter orang buta. Terdapat 2 role, sebagai mata dan sebagai tubuh',
             'teknologi' => ['Unity', 'C#'],
             'gambar' => '',
-            'demo' => 'https://Nifaxha.github.io/komunitas',
+            'itch.io' => 'https://Nifaxha.github.io/komunitas',
             'repo' => '',
         ],
         [
@@ -112,7 +112,7 @@ return [
             'deskripsi' => 'Game ini merupakan game multiplayer Co-op berbasis Unity untuk PC. Game ini kita hanya memiliki satu tubuh yang dikendalikan oleh dua pemain. Game ini kita memainkan karakter orang buta. Terdapat 2 role, sebagai mata dan sebagai tubuh',
             'teknologi' => ['Unity', 'C#'],
             'gambar' => '',
-            'demo' => 'https://Nifaxha.github.io/komunitas',
+            'itch.io' => 'https://Nifaxha.github.io/komunitas',
             'repo' => '',
         ],
     ],

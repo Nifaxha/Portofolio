@@ -18,9 +18,9 @@ export default function Contact() {
     ];
 
     return (
-        <section id="kontak" className="max-w-[1440px] mx-auto px-6 sm:px-10 py-16 border-t border-neutral-800 scroll-mt-20">
+        <section id="kontak" className="max-w-[1440px] mx-auto px-6 sm:px-10 py-16 border-t border-white scroll-mt-20">
             <h2 className="text-3xl md:text-4xl font-black text-orange-400 mb-4 tracking-tight">Kontak</h2>
-            <p className="text-black-400 text-sm md:text-base mb-8">
+            <p className="text-white text-sm md:text-base mb-8">
                 Punya proyek atau lowongan? Kirim pesan melalui salah satu kanal ini:
             </p>
 
