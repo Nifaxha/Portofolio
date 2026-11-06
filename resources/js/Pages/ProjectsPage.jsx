@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Header from '../Components/Header';
 
 export default function ProjectsPage({ portfolio }) {
+    // 1. KEMBALIKAN KE DATA ASLI (Laravel Props)
     const projects = portfolio?.projects || [];
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [activeFilter, setActiveFilter] = useState('Semua');
@@ -71,7 +72,7 @@ export default function ProjectsPage({ portfolio }) {
                                         setActiveFilter(cat);
                                         setSelectedIndex(0);
                                     }}
-                                    className={`px-3 py-1.5 text-xs font-semibold rounded-full transition ${
+                                    className={`px-3 py-1.5 text-sm font-semibold rounded-full transition ${
                                         activeFilter === cat
                                             ? 'bg-amber-400 text-neutral-950 font-bold'
                                             : 'bg-neutral-800/80 text-neutral-400 hover:bg-neutral-700 hover:text-white'
@@ -82,7 +83,7 @@ export default function ProjectsPage({ portfolio }) {
                             ))}
                         </div>
 
-                        <div className="text-xs font-mono text-neutral-400 uppercase tracking-wider mb-3 px-2">
+                        <div className="text-sm font-mono text-neutral-400 uppercase tracking-wider mb-3 px-2">
                             PROJECT LIST ({filteredProjects.length} PROJECTS)
                         </div>
 
@@ -100,11 +101,11 @@ export default function ProjectsPage({ portfolio }) {
                                                 : 'bg-transparent border-transparent hover:bg-neutral-800/60 text-neutral-300'
                                         }`}
                                     >
-                                        <div className="flex items-center justify-between text-[11px] font-mono opacity-80">
+                                        <div className="flex items-center justify-between text-[12px] font-mono opacity-80">
                                             <span>0{idx + 1} / {proj.kategori?.toUpperCase()}</span>
                                             <span>{proj.tahun}</span>
                                         </div>
-                                        <div className="font-bold text-sm tracking-tight">
+                                        <div className="font-bold text-[16px] tracking-tight">
                                             {proj.judul}
                                         </div>
                                     </button>
@@ -127,7 +128,7 @@ export default function ProjectsPage({ portfolio }) {
                                         {activeProject.kategori}
                                     </span>
                                 </div>
-                                <div className="text-xs font-mono text-neutral-400">
+                                <div className="text-xss font-mono text-neutral-400">
                                     0{selectedIndex + 1} / 0{filteredProjects.length}
                                 </div>
                             </div>
@@ -137,27 +138,27 @@ export default function ProjectsPage({ portfolio }) {
                                 {/* Info & Descriptions */}
                                 <div className="xl:col-span-7 space-y-6">
                                     <div>
-                                        <div className="text-xs font-mono text-amber-400 mb-1">
+                                        <div className="text-sm font-mono text-amber-400 mb-1">
                                             {activeProject.tahun} / {activeProject.kategori}
                                         </div>
                                         <h2 className="text-3xl font-black tracking-tight text-white uppercase mb-3">
                                             {activeProject.judul}
                                         </h2>
-                                        <p className="text-sm text-neutral-300 leading-relaxed">
+                                        <p className="text-1xl text-neutral-300 leading-relaxed">
                                             {activeProject.ringkas}
                                         </p>
                                     </div>
 
                                     {/* Tech Stack Pills */}
                                     <div>
-                                        <div className="text-[11px] font-mono text-neutral-400 uppercase tracking-wider mb-2">
+                                        <div className="text-[14px] font-mono text-neutral-400 uppercase tracking-wider mb-2">
                                             TEKNOLOGI & STACK
                                         </div>
                                         <div className="flex flex-wrap gap-1.5">
                                             {activeProject.teknologi?.map((tech) => (
                                                 <span 
                                                     key={tech}
-                                                    className="px-2.5 py-1 bg-neutral-800 border border-neutral-700 text-neutral-200 font-mono text-xs rounded-lg"
+                                                    className="px-2.5 py-1 bg-neutral-800 border border-neutral-700 text-neutral-200 font-mono text-sm rounded-lg"
                                                 >
                                                     {tech}
                                                 </span>
@@ -167,18 +168,19 @@ export default function ProjectsPage({ portfolio }) {
 
                                     {/* Detailed Bullet Points */}
                                     <div>
-                                        <div className="text-[11px] font-mono text-neutral-400 uppercase tracking-wider mb-2">
+                                        <div className="text-[13px] font-mono text-neutral-400 uppercase tracking-wider mb-2">
                                             DESKRIPSI & PERAN
                                         </div>
-                                        <ul className="space-y-2 text-xs text-neutral-300 list-disc list-inside leading-relaxed">
-                                            <li>{activeProject.deskripsi}</li>
-                                            {activeProject.teknologi && activeProject.teknologi.length > 0 && (
-                                                <li>Mengimplementasikan fitur utama menggunakan {activeProject.teknologi.slice(0, 2).join(' dan ')}.</li>
+                                        <ul className="space-y-2 text-[13px] text-neutral-300 list-disc list-inside leading-relaxed">
+                                            {/* Render deskripsi utama jika ada */}
+                                            {activeProject.deskripsi && (
+                                                <li>{activeProject.deskripsi}</li>
                                             )}
-                                            <li>Fokus pada performa, keterbacaan kode, dan antarmuka pengguna yang responsif.</li>
-                                            <li>Bisa membaca file dokumen seperti pdf dan image</li>
-                                            <li>Bisa memberikan link video pembelajaran yang mengambil dari youtube</li>
-                                            <li>Bisa membedakan mana siswa dan mana yang bukan</li>
+
+                                            {/* Render poin khusus jika ada di data project */}
+                                            {activeProject.highlights && activeProject.highlights.map((poin, index) => (
+                                                <li key={index}>{poin}</li>
+                                            ))}
                                         </ul>
                                     </div>
 
