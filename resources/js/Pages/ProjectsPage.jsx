@@ -14,16 +14,22 @@ export default function ProjectsPage({ portfolio }) {
 
     const activeProject = filteredProjects[selectedIndex] || filteredProjects[0] || {};
 
-    // Jalur gambar tombol
+    // Aset tombol aman dengan fallback
+    const itchAssets = {
+        normal: '/assets/Btn-Normal-Itch.io.png',
+        hover: '/assets/Btn-Hover-Itch.io.png',
+    };
+
+    const githubAssets = {
+    normal: '/assets/Btn-Normal-Github.png', // Ganti dengan file gambar tombol GitHub Anda
+    hover: '/assets/Btn-Hover-Github.png',
+    };
+
     const buttonAssets = {
-        github: {
-            normal: '/assets/Btn-Normal-Github-Repository.png',
-            hover: '/assets/Btn-Hover-Github-Repository.png',
-        },
-        'itch.io': {
-            normal: '/assets/Btn-Normal-Itch.io.png',
-            hover: '/assets/Btn-Hover-Itch.io.png',
-        },
+        'itch.io': itchAssets,
+        'itch': itchAssets,
+        'demo': itchAssets,
+        'github': githubAssets, // Fallback aman agar buttonAssets.github tidak undefined
     };
 
     // Deteksi gambar proyek (mendukung properti `gambar` maupun `image`)
@@ -166,14 +172,45 @@ export default function ProjectsPage({ portfolio }) {
                                         </div>
                                         <ul className="space-y-2 text-xs text-neutral-300 list-disc list-inside leading-relaxed">
                                             <li>{activeProject.deskripsi}</li>
-                                            <li>Mengimplementasikan fitur utama menggunakan {activeProject.teknologi?.slice(0, 2).join(' dan ')}.</li>
+                                            {activeProject.teknologi && activeProject.teknologi.length > 0 && (
+                                                <li>Mengimplementasikan fitur utama menggunakan {activeProject.teknologi.slice(0, 2).join(' dan ')}.</li>
+                                            )}
                                             <li>Fokus pada performa, keterbacaan kode, dan antarmuka pengguna yang responsif.</li>
+                                            <li>Bisa membaca file dokumen seperti pdf dan image</li>
+                                            <li>Bisa memberikan link video pembelajaran yang mengambil dari youtube</li>
+                                            <li>Bisa membedakan mana siswa dan mana yang bukan</li>
                                         </ul>
                                     </div>
 
                                     {/* Action Links dengan Tombol Gambar */}
                                     <div className="flex flex-wrap gap-4 pt-2 items-center">
-                                        {activeProject.repo && (
+                                        {/* 1. Jika data proyek berbentuk array links */}
+                                        {Array.isArray(activeProject.links) && activeProject.links.map((link, idx) => {
+                                            const asset = buttonAssets[link.type] || buttonAssets['itch.io'];
+                                            return (
+                                                <a
+                                                    key={idx}
+                                                    href={link.url}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="group relative inline-block transition-transform duration-300 hover:-translate-y-0.5 active:translate-y-0"
+                                                >
+                                                    <img
+                                                        src={asset?.normal || itchAssets.normal} 
+                                                        alt={link.type || 'link'}
+                                                        className="h-12 w-auto object-contain transition-opacity duration-300 ease-in-out group-hover:opacity-0"
+                                                    />
+                                                    <img
+                                                        src={asset?.hover || itchAssets.hover}
+                                                        alt={`${link.type || 'link'} hover`}
+                                                        className="absolute inset-0 h-12 w-auto object-contain opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
+                                                    />
+                                                </a>
+                                            );
+                                        })}
+
+                                        {/* 2. Fallback Repo (GitHub) */}
+                                        {!activeProject.links && activeProject.repo && (
                                             <a
                                                 href={activeProject.repo}
                                                 target="_blank"
@@ -181,32 +218,33 @@ export default function ProjectsPage({ portfolio }) {
                                                 className="group relative inline-block transition-transform duration-300 hover:-translate-y-0.5 active:translate-y-0"
                                             >
                                                 <img
-                                                    src={buttonAssets.github.normal}
+                                                    src={buttonAssets.github?.normal || itchAssets.normal} 
                                                     alt="GitHub Repository"
                                                     className="h-12 w-auto object-contain transition-opacity duration-300 ease-in-out group-hover:opacity-0"
                                                 />
                                                 <img
-                                                    src={buttonAssets.github.hover}
+                                                    src={buttonAssets.github?.hover || itchAssets.hover}
                                                     alt="GitHub Repository Hover"
                                                     className="absolute inset-0 h-12 w-auto object-contain opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
                                                 />
                                             </a>
                                         )}
 
-                                        {activeProject.demo && (
+                                        {/* 3. Fallback Demo / itch.io */}
+                                        {!activeProject.links && (activeProject.demo || activeProject['itch.io']) && (
                                             <a
-                                                href={activeProject.demo}
+                                                href={activeProject.demo || activeProject['itch.io']}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="group relative inline-block transition-transform duration-300 hover:-translate-y-0.5 active:translate-y-0"
                                             >
                                                 <img
-                                                    src={buttonAssets.demo.normal}
+                                                    src={buttonAssets['itch.io']?.normal || itchAssets.normal} 
                                                     alt="Live Demo"
                                                     className="h-12 w-auto object-contain transition-opacity duration-300 ease-in-out group-hover:opacity-0"
                                                 />
                                                 <img
-                                                    src={buttonAssets.demo.hover}
+                                                    src={buttonAssets['itch.io']?.hover || itchAssets.hover}
                                                     alt="Live Demo Hover"
                                                     className="absolute inset-0 h-12 w-auto object-contain opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
                                                 />
