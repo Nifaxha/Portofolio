@@ -35,6 +35,20 @@ export const portofolioData = {
   },
   projects: [
     {
+      judul: "yesCapt..",
+      kategori: "Game Developer", // Atau "Game Dev", "Mobile App", dll.
+      tahun: "2025",
+      ringkas:
+        "Game 2D platform berbasis Unity untuk PC dengan mekanisme permainan yang menarik.",
+      deskripsi:
+        "Game ini merupakan game 2D berbasis Unity untuk PC. Game ini memiliki mekanisme permainan yang menarik, dimana pemain harus menghindari rintangan yang tidak terlihat dan sampai ke garis finish dengan selamat",
+      peran: "Game Programmer (Mekanik dan Sistem)",
+      teknologi: ["Unity", "C#"],
+      gambar: "/assets/projects/YesCapt.png",
+      demo: "https://nixonnn.itch.io/yes-capt",
+      repo: "",
+    },
+    {
       judul: "Jigoku",
       kategori: "Game Developer", // Atau "Game Dev", "Mobile App", dll.
       tahun: "2025",
@@ -83,7 +97,7 @@ export const portofolioData = {
       ],
       teknologi: ["Unity", "C#"],
       gambar: "/assets/projects/trust-fall.png",
-      demo: "https://nifaxha.itch.io/trust-fall",
+      demo: "https://nixonnn.itch.io/trust-fall",
       repo: "",
     },
 
@@ -161,7 +175,7 @@ export const portofolioData = {
       ],
       teknologi: ["Unity", "C#"],
       gambar: "/assets/projects/GrowBack.png",
-      demo: "https://nifaxha.itch.io/growback",
+      demo: "https://phamyorr.itch.io/growback",
       repo: "",
     },
   ],
