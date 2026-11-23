@@ -1,5 +1,5 @@
-// src/data/portfolioData.js
-export const portfolioData = {
+// src/data/portofolioData.js
+export const portofolioData = {
   profile: {
     nama: "Dwi Haris Riza Darmawan",
     peran: "Game Developer & Web Developer",
@@ -9,7 +9,7 @@ export const portfolioData = {
       "Aku membuat aplikasi web yang cepat dan mudah dipakai. Di bawah ini beberapa proyek yang pernah aku kerjakan.",
     tentang: [
       "Saya biasanya berperan sebagai Front End Developer, Game Programmer, dan Project Manager. Saya memiliki pengalaman dalam mengembangkan aplikasi web dan game menggunakan berbagai teknologi.",
-      "Saya memiliki kemampuan dalam bahasa pemrograman seperti JavaScript, Python, HTML & CSS, dan C#. Selain itu, saya juga terbiasa menggunakan framework seperti React, Laravel, dan Tailwind CSS. Saya juga memiliki pengalaman dalam menggunakan platform seperti Git & GitHub, Figma, MySQL, dan Unity.",
+      "Saya memiliki kemampuan dalam bahasa pemrograman seperti JavaScript, Python, HTML & CSS, dan C#. Selain itu, saya juga terbiasa menggunakan framework seperti React, Laravel, dan Tailwind CSS. Saya juga memiliki pengalaman dalam menggunakan platform seperti Git & GitHub, Figma, dan Unity.",
     ],
     keahlian: [
       {
@@ -17,7 +17,7 @@ export const portfolioData = {
         daftar: ["JavaScript", "Python", "HTML & CSS", "C#"],
       },
       { grup: "Framework", daftar: ["React", "Laravel", "Tailwind CSS"] },
-      { grup: "Platform", daftar: ["Git & GitHub", "MySQL", "Unity"] },
+      { grup: "Platform", daftar: ["Git & GitHub", "Unity"] },
     ],
     kontak: [
       {
@@ -34,6 +34,59 @@ export const portfolioData = {
     cv: "",
   },
   projects: [
+    {
+      judul: "Jigoku",
+      kategori: "Game Developer", // Atau "Game Dev", "Mobile App", dll.
+      tahun: "2025",
+      ringkas:
+        "Game 2D platform berbasis Unity untuk PC dengan mekanisme permainan yang menarik.",
+      deskripsi:
+        "Game ini merupakan game 2D berbasis Unity untuk PC. Game ini memiliki mekanisme permainan yang menarik, dimana pemain harus menghindari rintangan yang tidak terlihat dan sampai ke garis finish dengan selamat",
+      peran: "Game Programmer (Mekanik dan Sistem)",
+      teknologi: ["Unity", "C#"],
+      gambar: "/assets/projects/Jigoku.png", // Masukkan gambar ke folder public/assets/projects/
+      demo: "https://nifaxha.itch.io/jigoku", // Opsional (isi '' atau hapus jika tidak ada)
+      repo: "", // Opsional (isi '' atau hapus jika tidak ada)
+    },
+
+    {
+      judul: "Boat Together",
+      tahun: 2026,
+      kategori: "Game Developer",
+      peran: "Game Programmer",
+      ringkas: "Game fun multiplayer berbasis Unity untuk PC.",
+      deskripsi:
+        "Game ini merupakan game fun multiplayer berbasis Unity untuk PC. Pada game ini kita menggerakkan 1 kapal dengan 2 peran pemain, dimana 1 pemain menggerakkan bagian kiri kapal dan 1 pemain menggerakkan bagian kanan kapal.",
+      highlights: [
+        "Game ini dibuat menggunakan Unity dan C#.",
+        "Game ini hanya memiliki 1 level yang harus diselesaikan oleh pemain, tetapi jarak tempuhnya cukup jauh.",
+        "Game ini memiliki beberapa rintangan yang harus dihindari oleh pemain.",
+      ],
+      teknologi: ["Unity", "C#"],
+      gambar: "/assets/projects/boat-together.png",
+      demo: "https://nifaxha.itch.io/boat-together",
+      repo: "",
+    },
+
+    {
+      judul: "Trust Fall",
+      tahun: 2026,
+      kategori: "Game Developer",
+      peran: "Game Programmer",
+      ringkas: "Game multiplayer Co-op berbasis Unity untuk PC.",
+      deskripsi:
+        "Game ini merupakan game multiplayer Co-op berbasis Unity untuk PC. Game ini hanya memiliki satu tubuh yang dikendalikan oleh dua pemain. Game ini memainkan karakter orang buta. Terdapat 2 role, sebagai mata dan sebagai tubuh",
+      highlights: [
+        "Game ini dibuat menggunakan Unity dan C#.",
+        "Game ini memiliki beberapa level yang bisa diselesaikan oleh pemain dan pemain harus menyelesaikan level sebelumnya untuk membuka level baru.",
+        "Game ini memiliki beberapa rintangan yang harus dihindari oleh pemain, tetapi dalam keadaan pemain tidak bisa melihat rintangan tersebut karena pemain memainkan karakter orang buta.",
+      ],
+      teknologi: ["Unity", "C#"],
+      gambar: "/assets/projects/trust-fall.png",
+      demo: "https://nifaxha.itch.io/trust-fall",
+      repo: "",
+    },
+
     {
       judul: "Ngotok 3D",
       tahun: 2026,
@@ -52,61 +105,7 @@ export const portfolioData = {
       demo: "https://nifaxha.itch.io/ngotok-3d",
       repo: "",
     },
-    {
-      judul: "Chatbot Bimbel",
-      tahun: 2026,
-      kategori: "Chatbot",
-      peran: "Project Manager",
-      ringkas:
-        "Pembuatan chatbot Bimbel untuk mempermudah siswa dalam menjawab sebuah pertanyaan",
-      deskripsi:
-        "Pembuatan chatbot Bimbel untuk mempermudah siswa dalam menjawab sebuah pertanyaan. Chatbot ini dapat digunakan untuk menjawab pertanyaan seputar materi bimbel, jadwal bimbel, dan informasi lainnya. Chatbot ini dibuat menggunakan Laravel, N8N, Blade.php, dan Docker. Selain itu chatbot ini sudah diintergrasikan dengan WhatsApp sehingga siswa dapat mengakses chatbot ini melalui WhatsApp dan telah diintegrasikan dengan API Deepseek V4 pro untuk menjawab pertanyaan siswa.",
-      highlights: [
-        "Chatbot ini dibuat menggunakan Laravel, N8N, Blade.php, dan Docker.",
-        "Chatbot ini sudah diintergrasikan dengan WhatsApp sehingga siswa dapat mengakses chatbot ini melalui WhatsApp.",
-        "Chatbot ini telah diintegrasikan dengan API Deepseek V4 pro untuk menjawab pertanyaan siswa.",
-      ],
-      teknologi: ["Laravel", "N8N", "Blade.php", "Docker"],
-      gambar: "/assets/projects/chatbot-bimbel.png",
-      demo: "",
-      repo: "",
-    },
-    {
-      judul: "Boat Together",
-      tahun: 2026,
-      kategori: "Game Developer",
-      peran: "Game Programmer",
-      ringkas: "Game fun multiplayer berbasis Unity untuk PC.",
-      deskripsi:
-        "Game ini merupakan game fun multiplayer berbasis Unity untuk PC. Pada game ini kita menggerakkan 1 kapal dengan 2 peran pemain, dimana 1 pemain menggerakkan bagian kiri kapal dan 1 pemain menggerakkan bagian kanan kapal. Game ini memiliki beberapa level yang harus diselesaikan oleh pemain.",
-      highlights: [
-        "Game ini dibuat menggunakan Unity dan C#.",
-        "Game ini hanya memiliki 1 level yang harus diselesaikan oleh pemain, tetapi jarak tempuhnya cukup jauh.",
-        "Game ini memiliki beberapa rintangan yang harus dihindari oleh pemain.",
-      ],
-      teknologi: ["Unity", "C#"],
-      gambar: "/assets/projects/boat-together.png",
-      demo: "https://nifaxha.itch.io/boat-together",
-      repo: "",
-    },
-    {
-      judul: "Trust Fall",
-      tahun: 2026,
-      kategori: "Game Developer",
-      peran: "Game Programmer",
-      ringkas: "Game multiplayer Co-op berbasis Unity untuk PC.",
-      deskripsi:
-        "Game ini merupakan game multiplayer Co-op berbasis Unity untuk PC. Game ini kita hanya memiliki satu tubuh yang dikendalikan oleh dua pemain. Game ini kita memainkan karakter orang buta. Terdapat 2 role, sebagai mata dan sebagai tubuh",
-      highlights: [
-        "Game ini dibuat menggunakan Unity dan C#.",
-        "Game ini memiliki beberapa level yang bisa diselesaikan oleh pemain dan pemain harus menyelesaikan level sebelumnya untuk membuka level baru.",
-        "Game ini memiliki beberapa rintangan yang harus dihindari oleh pemain, tetapi dalam keadaan pemain tidak bisa melihat rintangan tersebut karena pemain memainkan karakter orang buta.",
-      ],
-      teknologi: ["Unity", "C#"],
-      gambar: "/assets/projects/trust-fall.png",
-      demo: "https://nifaxha.itch.io/trust-fall",
-      repo: "",
-    },
+
     {
       judul: "Just Drive Bro!",
       tahun: 2026,
@@ -126,6 +125,27 @@ export const portfolioData = {
       demo: "https://nifaxha.itch.io/just-drive-bro",
       repo: "",
     },
+
+    {
+      judul: "Chatbot Bimbel",
+      tahun: 2026,
+      kategori: "Chatbot",
+      peran: "Project Manager",
+      ringkas:
+        "Pembuatan chatbot Bimbel untuk mempermudah siswa dalam menjawab sebuah pertanyaan",
+      deskripsi:
+        "Pembuatan chatbot Bimbel untuk mempermudah siswa dalam menjawab sebuah pertanyaan. Chatbot ini dapat digunakan untuk menjawab pertanyaan seputar materi bimbel, jadwal bimbel, dan informasi lainnya. Chatbot ini dibuat menggunakan N8N. Selain itu chatbot ini sudah diintergrasikan dengan WhatsApp sehingga siswa dapat mengakses chatbot ini melalui WhatsApp menggunakan WAHA dan telah diintegrasikan dengan API Deepseek V4 pro untuk menjawab pertanyaan siswa.",
+      highlights: [
+        "Chatbot ini dibuat menggunakan N8N.",
+        "Chatbot ini sudah diintergrasikan dengan WAHA sehingga siswa dapat mengakses chatbot ini melalui WhatsApp.",
+        "Chatbot ini telah diintegrasikan dengan API Deepseek V4 pro untuk menjawab pertanyaan siswa.",
+      ],
+      teknologi: ["N8N", "WAHA", "API Deepseek V4 pro"],
+      gambar: "/assets/projects/chatbot-bimbel.png",
+      demo: "",
+      repo: "",
+    },
+
     {
       judul: "GrowBack",
       tahun: 2026,
@@ -136,7 +156,7 @@ export const portfolioData = {
         "Game ini merupakan game singleplayer berbasis Unity untuk PC. Game ini meminta player untuk menghidupkan kembali tanah yang sudah mati dengan cara memberinya pupuk dan air.",
       highlights: [
         "Game ini dibuat menggunakan Unity dan C#.",
-        "Game ini diharuskan kita untuk menanam tanaman sendiri di kebun milik kita yang masih belum tercemar.",
+        "Game ini mengharuskan kita untuk menanam tanaman sendiri di kebun milik kita yang masih belum tercemar.",
         "Game ini mengharuskan kita untuk memikirkan strategi, agar tanah yang sudah tercemar tidak dapat menjangkau tanah kita yang masih belum tercemar secepat mungkin.",
       ],
       teknologi: ["Unity", "C#"],

@@ -248,7 +248,7 @@ export default function HomeProjects({ onNavigateToProjects }) {
       {/* ------------------- TOMBOL "LOAD MORE" UTAMA MENUJU HALAMAN PROYEK ------------------- */}
       <div className="mt-10 flex justify-center">
         <a
-          href="/projects"
+          href="#/projects"
           onClick={(e) => {
             if (onNavigateToProjects) {
               e.preventDefault();
