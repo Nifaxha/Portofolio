@@ -35,13 +35,18 @@ export const portofolioData = {
   },
   projects: [
     {
-      judul: "yesCapt..",
+      judul: "YesCapt.",
       kategori: "Game Developer", // Atau "Game Dev", "Mobile App", dll.
       tahun: "2025",
       ringkas:
-        "Game 2D platform berbasis Unity untuk PC dengan mekanisme permainan yang menarik.",
-      deskripsi:
-        "Game ini merupakan game 2D berbasis Unity untuk PC. Game ini memiliki mekanisme permainan yang menarik, dimana pemain harus menghindari rintangan yang tidak terlihat dan sampai ke garis finish dengan selamat",
+        "Game 3D berbasis Unity untuk PC dengan mekanisme permainan yang menarik.",
+      deskripsi: "Game ini merupakan game 3D berbasis Unity untuk PC.",
+      highlights: [
+        "Game ini dibuat menggunakan Unity dan C#.",
+        "Game ini mengambil referensi dari game Iron Lung",
+        "Game ini mengharuskan pemain menjelajahi sebuah planet dengan menggunakan kapal selam.",
+        "Pemain diharuskan mengambil foto dari titik koordinat yang telah ditentukan untuk menyelesaikan misi.",
+      ],
       peran: "Game Programmer (Mekanik dan Sistem)",
       teknologi: ["Unity", "C#"],
       gambar: "/assets/projects/YesCapt.png",
